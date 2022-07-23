@@ -62,6 +62,7 @@ function Remove-CSharpComments {
         }
         
     }
+    $newContent = ([regex]::Matches($newContent,"(?!^[\n]*$)[ ]*[\S]{1,}.*")).Value -join "`n"
     return $newContent
  
 }
